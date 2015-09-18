@@ -408,11 +408,11 @@ Public Class frmPrincipalImportacion
     Private Sub InicioApp()
         Dim ConecPruebas, strParametro As String
 
-        IdProceso = "I"
+        'IdProceso = "I"
         rsProcesos = New ADODB.Recordset
-        strParametro = Microsoft.VisualBasic.Command
+        'strParametro = Microsoft.VisualBasic.Command
 
-        Select Case UCase(strParametro)
+        Select Case parametroApp 'UCase(strParametro)
 
             Case "P" '  Ejecución Programada
                 TipoEjecucion = "P"

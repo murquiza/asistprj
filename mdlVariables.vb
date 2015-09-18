@@ -1,4 +1,7 @@
 Module mdlVariables
+    Public parametroApp As String
+
+
     ''' exportar
     Friend claseBDLibrerias As New clsBD_NET
     Friend claseBDExportacion As New clsBD_NET
@@ -33,7 +36,7 @@ Module mdlVariables
     Public objUtilidades As New clsUtilidades_NET
     'Public objErr As mdpErroresMensajes.clsVisorLog
     Public strErr As String = "" ' cadena que contiene el código de error
-    Public IdProceso As String
+    'Public IdProceso As String
     Public Codcia As String ' Contiene el código de la compañía de asistencia seleccionada
     Public Descia As String ' Nombre de la Compañia de Asistencia
     Public NIFCompa As String ' NIF compañía asistencia

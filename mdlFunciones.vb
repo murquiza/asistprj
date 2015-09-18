@@ -12,35 +12,78 @@ Module mdlFunciones
         '       - suplidos
         '       - importacion
         '       - exportacion
-        ' - parametros depende de la aplicacion seleccionada
+        ' - entorno 
+        '       - PM -> Pruebas manual
+        '       - PP -> Pruebas Proceso
+        '       - RM -> Real manual
+        '       - RP -> Real Proceso
+        ' - codigo de usuario que ejectua
         ' - log path y nombre de fichero de log
         '
-        msgUso = "Uso: asistprj -aplicacion -parametro -log" & vbCrLf & " - aplicacion valores posibles:  "
+        msgUso = "Uso: asistprj -aplicacion -entorno -usuario -log" & vbCrLf & " - aplicacion valores posibles:  "
 
         If CmdArgs.Length = 0 Then
             MsgBox(msgUso)
+            End
         End If
-        ' aplicación a ejecutar
 
+        If CmdArgs.Length > 1 Then
+            ' entorno de ejecución
+            parametroApp = CmdArgs(1).Substring(1).ToUpper.Trim
+            Select Case parametroApp
+                Case "PM"
+                    TipoEjecucion = "M"
+                Case "PA"
+                    TipoEjecucion = "P"
+                Case "RM"
+                    TipoEjecucion = "M"
+                Case "PA"
+                    TipoEjecucion = "P"
+                Case Else
+                    MsgBox(msgUso)
+                    End
+            End Select
+        End If
+
+        If CmdArgs.Length > 2 Then
+            'usuario
+            strCodUserApli = ""
+            If CmdArgs(2).Substring(1).ToUpper.Trim.Length > 0 Then
+                strCodUserApli = CmdArgs(2).Substring(1).ToUpper.Trim
+            End If
+        End If
+
+        If CmdArgs.Length >= 3 Then
+            ' fichero log
+            If CmdArgs(3).Substring(1).Trim.Length > 0 Then
+                FicheroLog = CmdArgs(3).Substring(1).Trim
+            End If
+        End If
+
+        ' aplicación a ejecutar
         Select Case CmdArgs(0).Substring(1).ToUpper.Trim
             Case "APERTURAS"
                 Dim frm As New frmPrincipalAperturas
 
+                strIdProceso = "A"
                 frm.ShowDialog()
 
-            Case "CIERRRES"
+            Case "CIERRES"
                 Dim frm As New frmPrincipalCierres
 
+                strIdProceso = "C"
                 frm.ShowDialog()
 
             Case "PAGOS"
                 Dim frm As New frmPrincipalPagos
 
+                strIdProceso = "P"
                 frm.ShowDialog()
 
             Case "SUPLIDOS"
                 Dim frm As New frmPrincipalSuplidos
 
+                strIdProceso = "S"
                 frm.ShowDialog()
 
             Case "IMPORT"
@@ -51,10 +94,11 @@ Module mdlFunciones
             Case "EXPORT"
                 Dim frm As New frmPrincipalExportacion
 
+                strIdProceso = "E"
                 frm.ShowDialog()
             Case Else
                 MsgBox(msgUso)
-                Return -1
+                End
         End Select
 
         Return 0
@@ -869,7 +913,7 @@ GeneraTMP_Err:
         ' No dejar ningún elemento seleccionado
         'lvwControl.SelectedItem = Nothing
 
-        frmInstanciaPrincipal.Cursor = Cursors.Default
+        frmInstPagos.Cursor = Cursors.Default
 
         'JCLopez_f
 
@@ -879,7 +923,7 @@ CargarListView_pagosError:
         'If Err.Number = -2147217871 Then
         '    Resume
         'End If
-        frmInstanciaPrincipal.Cursor = Cursors.Default
+        frmInstPagos.Cursor = Cursors.Default
         CargarListView_pagos = False
         If claseBDPagos.BDWorkRecord.State = ADODB.ObjectStateEnum.adStateOpen Then claseBDPagos.BDWorkRecord.Close()
         'JCLopez_i  

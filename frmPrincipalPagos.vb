@@ -1113,10 +1113,10 @@ Public Class frmPrincipalPagos
     Private Sub InicioApp()
         On Error GoTo InicioApp_Err
 
-        Dim parametroApp As String
+        'Dim parametroApp As String
 
-        parametroApp = Microsoft.VisualBasic.Command
-        strIdProceso = "P"
+        'parametroApp = Microsoft.VisualBasic.Command
+        'strIdProceso = "P"
 
         If parametroApp = "PM" Then
             claseBDPagos.ConnexionPruebas()
@@ -1136,7 +1136,7 @@ Public Class frmPrincipalPagos
         ' Valores globales
         '
         'CodUserApli = objUtiles.CodUser(UsuaApli)   ' Usuario de la aplicación
-        If strCodUserAplicacion = "" Then strCodUserAplicacion = Microsoft.VisualBasic.Command()
+        'If strCodUserAplicacion = "" Then strCodUserAplicacion = Microsoft.VisualBasic.Command()
 
         'PathIconos = clses.GetParam("PathGraficos") ' Ubicación de objetos gráficos
         strPathIconos = "K:\Graficos\"

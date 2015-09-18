@@ -78,30 +78,29 @@
                     AssemblyName = "System.Xml"
                 />
                 <Reference
-                    Name = "adodb"
-                    AssemblyName = "ADODB"
-                    HintPath = "..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\adodb.dll"
-                    AssemblyFolderKey = "hklm\primary interop assemblies"
-                />
-                <Reference
-                    Name = "AxInterop.Crystal"
-                    AssemblyName = "AxInterop.Crystal"
-                    HintPath = "..\AxInterop.Crystal.dll"
-                />
-                <Reference
                     Name = "Accessibility"
                     AssemblyName = "Accessibility"
                     HintPath = "..\..\Windows\Microsoft.NET\Framework\v1.1.4322\Accessibility.dll"
                 />
                 <Reference
+                    Name = "ADODB"
+                    AssemblyName = "ADODB"
+                    HintPath = "dll\ADODB.dll"
+                />
+                <Reference
                     Name = "Interop.Crystal"
                     AssemblyName = "Interop.Crystal"
-                    HintPath = "..\Interop.Crystal.dll"
+                    HintPath = "dll\Interop.Crystal.dll"
+                />
+                <Reference
+                    Name = "AxInterop.Crystal"
+                    AssemblyName = "AxInterop.Crystal"
+                    HintPath = "dll\AxInterop.Crystal.dll"
                 />
                 <Reference
                     Name = "Microsoft.VisualBasic.Compatibility"
                     AssemblyName = "Microsoft.VisualBasic.Compatibility"
-                    HintPath = "..\..\Windows\Microsoft.NET\Framework\v1.1.4322\Microsoft.VisualBasic.Compatibility.dll"
+                    HintPath = "dll\Microsoft.VisualBasic.Compatibility.dll"
                 />
             </References>
             <Imports>

@@ -1,0 +1,7 @@
+[ODBC]
+DRIVER=SQL Server
+UID=usuarios
+DATABASE=BDmutuae
+WSID=JL_LACALLE
+APP=Microsoft Open Database Connectivity
+SERVER=OBELIX

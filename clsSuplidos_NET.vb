@@ -307,7 +307,7 @@ Pagar_Err:
             Call ColorListItem(objlistitem, Color.Goldenrod)
         End If
         objlistitem.SubItems.Item(frmInstSuplidos.T7_ESTADO.Index).Text = TipoErr
-        If Not InsertarError(strCoderr, (objlistitem.SubItems(frmInstSuplidos.T7_REFER.Index).Text), Codsin, TipoErr, strError, IdProceso) Then
+        If Not InsertarError(strCoderr, (objlistitem.SubItems(frmInstSuplidos.T7_REFER.Index).Text), Codsin, TipoErr, strError, strIdProceso) Then
             strError = "Se ha producido un error crítico en el registro de la tabla de errores y avisos" & Chr(13) & Chr(10) & "El proceso de suplidos no puede continuar."
             MsgBox(strError, MsgBoxStyle.Exclamation)
             'objError.Tipo = mdpErroresMensajes.Tipo.Pantalla

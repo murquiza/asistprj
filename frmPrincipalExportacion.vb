@@ -329,21 +329,20 @@ Public Class frmPrincipalExportacion
         Cabecera = New ADODB.Recordset
 
         frmInstanciaPrincipal = Me
-        IdProceso = "E"
+        '        IdProceso = "E"
 
         FicheroLog = objExportar.RutaLog()
 
-        strParametro = Microsoft.VisualBasic.Command
-
-        li_posAsterisco = InStr(strParametro, "*")
-        If li_posAsterisco > 0 Then
-            strParametro = Trim(Mid(strParametro, 1, li_posAsterisco - 1))
-        End If
+        'strParametro = Microsoft.VisualBasic.Command
+        'li_posAsterisco = InStr(strParametro, "*")
+        'If li_posAsterisco > 0 Then
+        '   strParametro = Trim(Mid(strParametro, 1, li_posAsterisco - 1))
+        'End If
 
 
         claseBDExportacion.BDComand.CommandTimeout = 0
         'Select Case UCase(Mid$(Command$, 1, PosCom - 1))
-        Select Case strParametro
+        Select Case parametroApp  'strParametro
             Case "P"
                 TipoEjecucion = "P"
             Case "PP"

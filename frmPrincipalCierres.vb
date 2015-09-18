@@ -957,11 +957,11 @@ Public Class frmPrincipalCierres
 
         On Error GoTo InicioApp_Error
 
-        Dim strParametro As String
+        'Dim parametroApp As String
 
         HoraTopeEjecucion = "21:15:00"
 
-        strIdProceso = "C"
+        'strIdProceso = "C"
 
         colAvisosBloqueo = New Collection
         colSiniestrosCerrados = New Collection
@@ -969,8 +969,8 @@ Public Class frmPrincipalCierres
 
         frmInstCierres = Me
 
-        strParametro = Microsoft.VisualBasic.Command
-        If strParametro = "PM" Then
+        'strParametro = Microsoft.VisualBasic.Command
+        If parametroApp = "PM" Then
             claseBDCierres.ConnexionPruebas()
             claseBDCierres.BDComand.CommandTimeout = 300
             picTest.Show()
@@ -985,7 +985,7 @@ Public Class frmPrincipalCierres
         ' Valores globales
         '
         'CodUserApli = objUtiles.CodUser(UsuaApli)   ' Usuario de la aplicación
-        If strCodUserApli = "" Then strCodUserApli = strParametro
+        'If strCodUserApli = "" Then strCodUserApli = parametroApp
 
 
         'PathReports = clses.GetParam("PathReports") ' Ubicación de los ficheros de impresión
@@ -1042,6 +1042,7 @@ Public Class frmPrincipalCierres
 
         FiltroTodos.PerformClick()
         Exit Sub
+
 InicioApp_Error:
 
         MsgBox("Ha ocurrido un error iniciando la aplicación", MsgBoxStyle.Exclamation)

@@ -740,12 +740,10 @@ Public Class frmPrincipalAperturas
     Private Sub InicioApp()
         On Error GoTo InicioApp_Err
 
-        Dim parametroApp As String
+        'Dim parametroApp As String
+        'parametroApp = Microsoft.VisualBasic.Command
 
-        parametroApp = Microsoft.VisualBasic.Command
-
-        strIdProceso = "A"
-
+        'strIdProceso = "A"
         frmInstAperturas = Me
 
         'parametroApp = Microsoft.VisualBasic.Command
@@ -762,8 +760,7 @@ Public Class frmPrincipalAperturas
         End If
 
         'MUL ini no se recogia el parametro del usuario
-        strCodUserAplicacion = parametroApp
-
+        'strCodUserAplicacion = parametroApp
         'MUL fin no se recogia el parametro del usuario
 
         ' Creación de objetos  

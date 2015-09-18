@@ -665,14 +665,14 @@ Public Class frmPrincipalSuplidos
     Private Sub InicioApp()
         On Error GoTo InicioApp_Err
 
-        Dim parametroApp As String
+        'Dim parametroApp As String
 
-        parametroApp = Microsoft.VisualBasic.Command
+        ' parametroApp = Microsoft.VisualBasic.Command
 
         frmInstSuplidos = Me
 
         Arranque = True
-        IdProceso = "S"
+        'IdProceso = "S"
 
         Select Case UCase(parametroApp)
 
